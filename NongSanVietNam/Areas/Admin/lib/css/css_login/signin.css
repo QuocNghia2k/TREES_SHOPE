@@ -1,0 +1,166 @@
+html,
+body {
+  height: 100%;
+  padding-top: 30px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.form-signin {
+  padding: 15px;
+  margin: auto;
+  max-width: 700px;
+  font-size: 16px;
+  text-align: center;
+  padding-bottom: 100px;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+html,
+body {
+  height: 100%;
+}
+/* register frame */
+
+.form-signin .frame-register .form-input {
+  border: 1px solid #ced4da;
+  margin: 0.75em 0em;
+  border-radius: 0.25em;
+  display: flex;
+}
+.form-signin .frame-register .form-input label {
+  float: left;
+  border-right: 1px solid #ced4da;
+  font-size: 13px;
+
+  background: #fbfcff;
+  border-radius: 0.25rem;
+  padding: 11px 9px;
+  font-weight: 800;
+  margin-bottom: 0;
+}
+
+.form-signin .frame-register .form-input i {
+  float: left;
+  border-right: 1px solid #ced4da;
+  font-size: 14px;
+  padding: 14px 15px 14px 15px;
+  margin-top: 0px;
+  background: #fbfcff;
+  border-radius: 0.25rem;
+}
+
+.form-signin .frame-register .form-input input {
+  outline: 0;
+  border: 0;
+  font-size: 1em;
+  font-weight: 400;
+  color: #495057;
+  background-color: #fff;
+  padding: 10px;
+}
+
+.mess-register {
+  text-align: left;
+  font-style: italic;
+  font-size: 15px;
+  margin-top: 10px;
+}
+.mess-register input {
+  float: left;
+  margin: 3px 6px 1px 0px;
+}
+
+/* checkform */
+#login,
+#forget,
+#otp {
+  width: 400px;
+  margin-top: 50px;
+}
+#register button {
+  width: 300px;
+  margin: auto;
+  margin-top: 10px;
+}
+#login input {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+#login button {
+  margin-top: 25px;
+}
+#login .with-login {
+  margin: auto;
+  overflow: auto;
+}
+#login .with-login img {
+  width: 40px;
+  margin: 30px 10px;
+}
+#login .with-login img {
+  width: 40px;
+  margin: 30px 10px;
+  transition: all ease-out 0.2s;
+}
+#login .with-login img:hover {
+  /* box-shadow: 1px 0px 2px 1px; */
+  transform: scale(1.1);
+}
+#facebook {
+  border-radius: 5px;
+}
+#google {
+  border-radius: 50%;
+}
+.require {
+  color: red;
+  margin-left: 10px;
+  text-align: left;
+  font-size: 15px;
+}
+#require-password {
+  display: none;
+}
+#require-password2 {
+  display: none;
+}
+#require-phone {
+  display: none;
+}
+#require-fname {
+  display: none;
+}
+#require-fname2 {
+  display: none;
+}
+#require-lname {
+  display: none;
+}
+#require-lname2 {
+  display: none;
+}
+#require-email {
+  display: none;
+}

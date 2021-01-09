@@ -1,0 +1,67 @@
+﻿@model NongSanVietNam.Models.TinTuc
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TinTuc</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NguoiDung.TaiKhoan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NguoiDung.TaiKhoan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TieuDe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TieuDe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotaNgan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotaNgan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BaiVietChiTiet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BaiVietChiTiet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayTao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayTao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayCapNhat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayCapNhat)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDTinTuc }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

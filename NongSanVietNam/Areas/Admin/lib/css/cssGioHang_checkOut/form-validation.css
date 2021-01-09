@@ -1,0 +1,14 @@
+.container {
+  max-width: 960px;
+}
+
+.lh-condensed { line-height: 1.25; }
+.space-top{
+  margin-top: -40px;
+}
+.tongCong{
+  display: inline;
+}
+.colorPrice{
+  color: #ee370a;
+}

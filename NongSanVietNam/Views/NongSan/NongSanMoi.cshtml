@@ -1,0 +1,23 @@
+﻿@model IEnumerable<NongSanVietNam.Models.NongSan>
+<div class="row">
+    @{
+        foreach (var item in Model)
+        {
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <a class="fancybox" href='@item.HinhAnhDaiDien' data-fancybox-group="gallery" title='@item.TenNS'>
+                        <div style="width:220px;height:220px">
+                            <img src="@item.HinhAnhDaiDien" alt="..." width="220" height="220">
+                        </div>
+                    </a>
+                    <div class="caption">
+                        <h4>@item.TenNS</h4>
+                    </div>
+                    <div style="text-align:center">
+                        @Html.ActionLink("Xem chi tiết", "ChiTietNS", "NongSan", new { id = item.ID }, new { @class = "btn btn-success", @role = "button" })
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>

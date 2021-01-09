@@ -1,0 +1,200 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.unit {
+  color: #d0021b;
+  font-weight: 700;
+  font-size: 17px;
+  text-decoration: underline;
+  font-style: italic;
+}
+.frame-cart {
+  margin: auto;
+}
+.frame-cart ul .cart-content {
+  overflow: auto;
+  padding: 15px;
+  border-top: 1px solid #b5b5b5;
+}
+.frame-cart ul .cart-content img {
+  max-width: 200px;
+  float: left;
+}
+.frame-cart ul .cart-content .content-product {
+  float: left;
+}
+
+.frame-cart ul .cart-content .content-product .alpha {
+  min-width: 325px;
+  float: left;
+}
+.frame-cart ul .cart-content .content-product .alpha a {
+  font-size: 16px;
+  text-decoration: none;
+}
+.frame-cart ul .cart-content .content-product .alpha p {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.frame-cart ul .cart-content .content-product .beta {
+  float: right;
+  display: inline-flex;
+}
+.frame-cart ul .cart-content .content-product .beta .price {
+}
+.frame-cart ul .cart-content .content-product .beta .price p {
+  color: #cc0000;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.frame-cart ul .cart-content .content-product .beta .price .discount-price {
+  font-style: italic;
+  text-decoration: line-through;
+  color: #b1b1b1;
+  font-weight: 400;
+}
+.frame-cart
+  ul
+  .cart-content
+  .content-product
+  .beta
+  .price
+  .discount-price
+  span {
+  font-style: italic;
+  text-decoration: line-through;
+  color: #b1b1b1;
+  font-weight: 400;
+}
+.frame-cart ul .cart-content .content-product .beta .quantity {
+  margin-left: 40px;
+}
+.frame-cart
+  ul
+  .cart-content
+  .content-product
+  .beta
+  .quantity
+  .quantity-content {
+  outline: 0;
+  border: 1px solid #8c8c8c;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+.frame-cart
+  ul
+  .cart-content
+  .content-product
+  .beta
+  .quantity
+  .quantity-content
+  .btn {
+  padding: 2px 8px;
+}
+.frame-cart
+  ul
+  .cart-content
+  .content-product
+  .beta
+  .quantity
+  .quantity-content
+  .btn
+  i {
+  color: #8a8989;
+
+  font-size: 13px;
+}
+.frame-cart
+  ul
+  .cart-content
+  .content-product
+  .beta
+  .quantity
+  .quantity-content
+  .minus {
+  border-right: 1px solid #c8c8c8;
+}
+.frame-cart
+  ul
+  .cart-content
+  .content-product
+  .beta
+  .quantity
+  .quantity-content
+  .plus {
+  border-left: 1px solid #c8c8c8;
+}
+.frame-cart
+  ul
+  .cart-content
+  .content-product
+  .beta
+  .quantity
+  .quantity-content
+  input {
+  max-width: 25px;
+  padding: 0px;
+  outline: 0;
+  border: 0;
+  text-align: center;
+}
+.frame-cart ul .cart-content .content-product .beta .quantity .delete-content {
+  text-align: center;
+}
+.frame-cart
+  ul
+  .cart-content
+  .content-product
+  .beta
+  .quantity
+  .delete-content
+  button {
+  font-size: 14px;
+  border-radius: 3px;
+  text-align: center;
+  border: 1px solid #9d9d9d;
+  padding: 5px 35px;
+}
+.receipt {
+  padding: 10px;
+}
+.receipt ul .price-product {
+  display: block;
+  overflow: auto;
+}
+.receipt ul .price-product h5 {
+  font-size: 13px;
+  display: inline;
+  float: left;
+  margin-top: 10px;
+}
+.receipt ul .price-product p {
+  float: right;
+}
+.receipt .sum-price {
+  text-align: right;
+  border-top: 1px solid #8a8a8a;
+  padding: 10px;
+}
+.receipt .sum-price .title {
+}
+.receipt .sum-price .title p {
+  font-size: 20px;
+}
+
+.receipt .sum-price .price-sum p {
+  font-size: 15px;
+  color: #c1c1c1;
+}
+.receipt .sum-price .price-sum .price {
+  font-size: 20px;
+  color: #d0021b;
+}
+.receipt .sum-price .btn-receipt {
+  padding: 10px 130px;
+  border-radius: 5px;
+  margin: auto;
+}

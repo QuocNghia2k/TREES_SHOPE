@@ -1,0 +1,55 @@
+﻿@using NongSanVietNam.Models;
+@model NongSanVietNam.Models.NongSan
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<div class="row">
+    <div class="col-sm-6 col-md-6">
+        <div class="thumbnail">
+            <img src="@Model.HinhAnhDaiDien" alt="..." width="500" height="300">
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-6">
+        <p>
+            <h2>@Model.TenNS</h2>
+        </p>
+        <p>
+            @Html.Raw(Model.MoTaNgan)
+        </p>
+    </div>
+</div>
+<div class="row">
+<div>
+    <div>@Html.Raw(Model.MotaChiTiet)</div>
+</div>
+    </div>
+<div class="row">
+    <div>
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="active"><a href="#" style="background-color:#337ab7; color:white">Nông sản cùng loại</a> </li>
+        </ul>
+    </div>
+    @{
+        foreach (var item in @ViewBag.nslq)
+        {
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <a class="fancybox" href='@item.HinhAnhDaiDien' data-fancybox-group="gallery" title='@item.TenNS'>
+                            <div style="width:220px;height:220px">
+                                <img src="@item.HinhAnhDaiDien" alt="..." width="262" height="220">
+                            </div>
+                        </a>
+                        <div class="caption">
+                            <h4 style="text-align:center">@item.TenNS</h4>
+                        </div>
+                        <div style="text-align:center">
+                            @Html.ActionLink("Xem chi tiết", "ChiTietNS", "NongSan", new { id = item.ID }, new { @class = "btn btn-success", @role = "button" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>

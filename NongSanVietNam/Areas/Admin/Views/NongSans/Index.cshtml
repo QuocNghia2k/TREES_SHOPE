@@ -1,0 +1,103 @@
+﻿@model IEnumerable<NongSanVietNam.Models.NongSan>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+<script>
+    $(function () {
+        $(".popup_button_delete").click(function (e) {
+            e.preventDefault();
+            bootbox.dialog({
+                message: "Bạn có chắc chắn muốn xóa các thông tin đã chọn không?",
+                title: "Xác nhận xóa thông tin",
+                buttons: {
+                    success: {
+                        label: "Đồng ý!",
+                        className: "btn-success",
+                        callback: function () {
+                            $('form').submit();
+                            //__doPostBack('btnDelete', 'OnClick');
+                        }
+                    },
+                    danger: {
+                        label: "Hủy bỏ!",
+                        className: "btn-danger",
+                        callback: function () {
+                            //Example.show("Xem lại");
+                        }
+                    }
+                }
+            });
+            return false;
+        });
+    });
+</script>
+@using (Html.BeginForm("Delete", "NongSans", FormMethod.Post))
+{
+    <div class="container">
+        <h2>&nbsp;</h2>
+        <div class="panel panel-default MaginTop">
+            <div class="panel-heading">
+                <h2 class="panel-title" style="height:32px">
+                    <b style="font-size:20pt">Danh sách nông sản</b>
+                    <div class="btn-group" role="group" aria-label="..." style="float:right">
+                        @Html.ActionLink("Thêm mới", "Create", "NongSans", new { @class = "btn btn-default" })
+                        <input type="submit" value="Xóa" class="btn btn-default popup_button_delete" />
+                        @Html.ActionLink("Đóng", "Close", "NongSans", new { @class = "btn btn-default" })
+                    </div>
+                </h2>
+            </div>
+            <div class="panel-body">
+                <table class="table table-bordered">
+                    <tr>
+                        <th style="text-align:center">Chọn</th>
+                        <th style="text-align:center">STT</th>
+                        <th style="text-align:center">
+                            @Html.DisplayNameFor(model => model.LoaiN.TenLoai)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TenNS)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.MoTaNgan)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.NgayTao)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.NguoiTao)
+                        </th>
+                    </tr>
+                    @{
+                        var i = 1;
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td style="text-align:center"><input type="checkbox" value="@item.IDLoaiNS" name="id" id="id" /></td>
+                                <td style="text-align:center">@i</td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LoaiN.TenLoai)
+                                </td>
+                                <td>
+                                    @Html.ActionLink(item.TenNS, "Edit", new { id = item.ID })
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MoTaNgan)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NgayTao)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NguoiTao)
+                                </td>
+                            </tr>
+                        }
+                        i++;
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+}

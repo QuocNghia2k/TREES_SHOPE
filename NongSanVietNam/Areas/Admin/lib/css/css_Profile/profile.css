@@ -1,0 +1,49 @@
+.block_component {
+  width: 100%;
+}
+
+.avatar_profile {
+  width: 50%;
+}
+
+#level {
+  font-weight: 900;
+  font-family: monospace;
+}
+.iphone12 {
+  width: 10%;
+}
+
+.config {
+  width: 5%;
+  margin-left: 10px;
+}
+
+.Profile_page {
+  background-color: rgba(87, 87, 86, 0.034);
+}
+
+.spacing_form {
+  margin-top: 2em;
+}
+
+.list-group-item {
+  cursor: pointer;
+}
+
+.ps-menu a {
+  text-decoration: none;
+  color: #212529;
+}
+.ps-menu a .active {
+  color: white;
+}
+.check-result {
+  text-align: center;
+  margin: auto;
+}
+.check-result table {
+  margin: auto;
+  border: 1px solid #bcbcbc;
+  font-size: 13px;
+}

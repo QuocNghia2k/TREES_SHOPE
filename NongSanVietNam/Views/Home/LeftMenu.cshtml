@@ -1,0 +1,26 @@
+﻿@model IEnumerable<NongSanVietNam.Models.LoaiN>
+<div class="list-group">
+    <a href="#" class="list-group-item active">
+        <b>LOẠI CÂY CẢNH</b>
+    @{
+        foreach (var item in Model)
+        {
+            @Html.ActionLink(item.TenLoai, "DanhMucNS", "NongSan", new { id = item.IDLoaiNS }, new { @class = "list-group-item" });
+        }
+    }
+
+</div>
+<ul class="list-group">
+    <li class="list-group-item active"><b>TÌM KIẾM</b></li>
+    <li>
+        <div class="input-group">
+            @using (Html.BeginForm("TimKiemNS", "Home", FormMethod.Post))
+            {
+                <div id="searchbox">
+                    <input id="txtTimKiem" name="txtTimKiem" type="text" size="20" placeholder="Nhập tên sản phẩm...." />
+                    <input id="button-submit" type="submit" value="Search" />
+                </div>
+            }
+        </div>
+    </li>
+</ul>

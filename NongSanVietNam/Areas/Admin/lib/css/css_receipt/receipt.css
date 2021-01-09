@@ -1,0 +1,36 @@
+.frame-check {
+  text-align: center;
+}
+.frame-check .frame-input {
+  border: 1px solid #ced4da;
+  width: 500px;
+  text-align: center;
+  margin: auto;
+  border-radius: 5px;
+  display: flex;
+}
+.frame-check .frame-input input {
+  width: 430px;
+  border-radius: 5px;
+  border: 0;
+  outline: 0;
+  padding: 10px 15px;
+}
+.frame-check .frame-input label {
+  padding: 10px 15px;
+  background: #eaeaea;
+  margin: 0;
+  border-right: 1px solid #bcbcbc;
+}
+#result {
+  min-height: 300px;
+  margin: 100px 0px;
+}
+.check-result {
+  text-align: center;
+  margin: auto;
+}
+.check-result table {
+  margin: auto;
+  border: 1px solid #bcbcbc;
+}

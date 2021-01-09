@@ -1,0 +1,182 @@
+﻿body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+.PhanDau{
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+.Menu{
+    font-weight:bold;
+}
+footer{
+    background-color: black;
+    color:white;
+}
+/*progressbar*/
+#progressbar {
+	margin-bottom: 30px;
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+}
+
+
+#progressbar li {
+	list-style-type: none;
+	color: rgb(51, 51, 51);
+	text-transform: uppercase;
+	font-size: 12px;
+	width: 25%;
+	float: left;
+	position: relative;
+	text-align: center;
+}
+#progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: 10px;
+	color: #333;
+	background: rgb(176, 179, 166);
+	border-radius: 3px;
+	margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: rgb(176, 179, 166);
+	position: absolute;
+	left: -50%;
+	top: 9px;
+	z-index: -1; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+	background: #27AE60;
+	color: white;
+}
+
+#progressbar li.active{
+	color: #27AE60;
+}
+
+/*process bar lazada*/
+.progress_tab
+{
+    width:100%;
+    height:58px;
+    background:#183545;
+}
+._progress-bar {
+	position:absolute;
+	top:0;
+	left:50px;
+    width:100%;
+}
+.step-breadcrumb._list {
+	position:relative;
+	height:55px;
+	padding:0 55px 0 0;
+	list-style:none
+}
+.step-breadcrumb._list:before {
+	position:absolute;
+	top:8px;
+	-ms-transform:rotate(45deg);
+	transform:rotate(45deg);
+	width:39px;
+	height:38px;
+	border:1px solid #5f6d77;
+	border-width:1px 1px 0 0;
+	background:#183545;
+	content:"";
+	left:-19px;
+	z-index:2
+}
+.step-breadcrumb._text {
+	display:block;
+	padding:0 33px;
+	color:#8b9aa2;
+	line-height:55px;
+	font-size:13px;
+	text-transform:uppercase;
+	font-weight:700
+}
+.step-breadcrumb._item {
+	position:relative;
+	height:55px;
+	float:left;
+	margin:0 -26px 0 0;
+	padding:0 30px;
+	background:#183545
+}
+.step-breadcrumb._item:after {
+	position:absolute;
+	top:8px;
+	-ms-transform:rotate(45deg);
+	transform:rotate(45deg);
+	width:39px;
+	height:38px;
+	border:1px solid #5f6d77;
+	border-width:1px 1px 0 0;
+	background:#183545;
+	content:"";
+	right:6px;
+	z-index:9
+}
+.step-breadcrumb._item:last-child {
+	padding-right:0
+}
+.step-breadcrumb._item:last-child:after {
+	right:-20px
+}
+.step-breadcrumb._item.-past {
+	padding-left:46px
+}
+.step-breadcrumb._item.-past:before {
+	background-image:url(/images/2014/sprites/icons-header-00fa077103.png);
+	background-position:-320px -251px;
+	width:17px;
+	height:13px;
+	position:absolute;
+	top:21px;
+	left:53px;
+	content:""
+}
+.step-breadcrumb._item.-current,.step-breadcrumb._item.-current:after {
+	background:#1a9cb7
+}
+.step-breadcrumb._item.-current .step-breadcrumb._text {
+	color:#fff
+}
+.panel1
+{
+    margin-top:35px;
+    background-color: #ffffff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}

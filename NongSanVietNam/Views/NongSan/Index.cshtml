@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div>
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#" style="background-color:#337ab7; color:white">Nông sản mới cập nhật</a> </li>
+    </ul>
+    <p>@Html.Action("NongSanMoi", "NongSan")</p>
+</div>

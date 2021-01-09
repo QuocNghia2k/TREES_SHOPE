@@ -1,0 +1,96 @@
+﻿@model IEnumerable<NongSanVietNam.Models.TinTuc>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+<script>
+    $(function () {
+        $(".popup_button_delete").click(function (e) {
+            e.preventDefault();
+            bootbox.dialog({
+                message: "Bạn có chắc chắn muốn xóa các thông tin đã chọn không?",
+                title: "Xác nhận xóa thông tin",
+                buttons: {
+                    success: {
+                        label: "Đồng ý!",
+                        className: "btn-success",
+                        callback: function () {
+                            $('form').submit();
+                            //__doPostBack('btnDelete', 'OnClick');
+                        }
+                    },
+                    danger: {
+                        label: "Hủy bỏ!",
+                        className: "btn-danger",
+                        callback: function () {
+                            //Example.show("Xem lại");
+                        }
+                    }
+                }
+            });
+            return false;
+        });
+    });
+</script>
+@using (Html.BeginForm("Delete", "TinTucs", FormMethod.Post))
+{
+    <div class="container">
+        <h2>&nbsp;</h2>
+        <div class="panel panel-default MaginTop">
+            <div class="panel-heading">
+                <h2 class="panel-title" style="height:32px">
+                    <b style="font-size:20pt">Danh sách nông sản</b>
+                    <div class="btn-group" role="group" aria-label="..." style="float:right">
+                        @Html.ActionLink("Thêm mới", "Create", "TinTucs", new { @class = "btn btn-default" })
+                        <input type="submit" value="Xóa" class="btn btn-default popup_button_delete" />
+                        @Html.ActionLink("Đóng", "Close", "TinTucs", new { @class = "btn btn-default" })
+                    </div>
+                </h2>
+            </div>
+            <div class="panel-body">
+                <table class="table table-bordered">
+                    <tr>
+                        <th style="text-align:center">Chọn</th>
+                        <th style="text-align:center">STT</th>
+                        <th style="text-align:center">
+                            @Html.DisplayNameFor(model => model.TieuDe)
+                        </th>
+                        <th style="text-align:center">
+                            @Html.DisplayNameFor(model => model.MotaNgan)
+                        </th>
+                        <th style="text-align:center">
+                            @Html.DisplayNameFor(model => model.NgayTao)
+                        </th>
+                        <th style="text-align:center">
+                            Người tạo
+                        </th>
+                    </tr>
+                    @{
+                        var i = 1;
+                        foreach (var item in Model)
+                        {
+                            <tr style="height:50px">
+                                <td style="text-align:center"><input type="checkbox" value="@item.IDTinTuc" name="id" id="id" /></td>
+                                <td style="text-align:center">@i</td>
+                                <td>
+                                    @Html.ActionLink(item.TieuDe, "Edit", new { id = item.IDTinTuc })
+                                </td>
+                                <td style="width:60%">
+                                    @Html.DisplayFor(modelItem => item.MotaNgan)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NgayTao)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NguoiDung.TaiKhoan)
+                                </td>
+                            </tr>
+                            i++;
+                        }
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+}

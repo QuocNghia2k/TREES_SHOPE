@@ -1,0 +1,101 @@
+﻿@model NongSanVietNam.Models.NongSan
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>&nbsp;</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h3 style="text-align:center; color:#0056f1;"><b>THÊM MỚI NÔNG SẢN</b></h3>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TenNS, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.TenNS, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TenNS, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IDLoaiNS, "Loại nông sản", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.DropDownList("IDLoaiNS", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.IDLoaiNS, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.HinhAnhDaiDien, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-5">
+                @Html.TextBoxFor(model => model.HinhAnhDaiDien, new { @class = "form-control"})
+                @Html.ValidationMessageFor(model => model.HinhAnhDaiDien, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-1">
+                <input type="button" class="btn-primary form-control" id="browse" value="Chọn File" />
+            </div>
+            <script>
+            $("#browse").click(function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+            //fileUrl = fileUrl.substring(fileUrl.lastIndexOf("/") + 1);
+                $("#HinhAnhDaiDien").val(fileUrl);
+            }
+            finder.popup();
+            });
+            </script>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MoTaNgan, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.TextAreaFor(model => model.MoTaNgan, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MoTaNgan, "", new { @class = "text-danger" })
+            </div>
+            <script type="text/javascript">
+                CKEDITOR.replace("MoTaNgan");
+            </script>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MotaChiTiet, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.TextAreaFor(model => model.MotaChiTiet, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MotaChiTiet, "", new { @class = "text-danger" })
+            </div>
+            <script type="text/javascript">
+                CKEDITOR.replace("MotaChiTiet");
+            </script>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NgayTao, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.NgayTao, new { htmlAttributes = new { @class = "form-control", @Value = DateTime.Now.ToString() } })
+                @Html.ValidationMessageFor(model => model.NgayTao, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NguoiTao, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.NguoiTao, new { htmlAttributes = new { @class = "form-control", @Value = Session["ten"].ToString() } })
+                @Html.ValidationMessageFor(model => model.NguoiTao, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group" style="text-align:center">
+            <div class="col-md-offset-2 col-md-8">
+                <input type="submit" value="Create" class="btn btn-primary" />&nbsp;
+                @Html.ActionLink("Quay lại", "Index", "NongSans", new { @class = "btn btn-danger" })
+            </div>
+        </div>
+    </div>
+}
