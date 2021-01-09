@@ -1,9 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NongSanVietNam", "NongSanVietNam\NongSanVietNam.csproj", "{302548B6-AB4B-4CEA-B8CA-511D5E87D16E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{80D22D06-6613-417E-8C25-2D55EAE11DC7}"
+	ProjectSection(SolutionItems) = preProject
+		..\Web bán cây\NongSanVietNam.sql = ..\Web bán cây\NongSanVietNam.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +23,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ED7B59BF-C35B-4277-B3F3-B1957436C8F8}
 	EndGlobalSection
 EndGlobal
