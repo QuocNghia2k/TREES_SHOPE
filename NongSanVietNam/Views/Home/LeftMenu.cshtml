@@ -10,5 +10,17 @@
     }
 
 </div>
-
-
+<ul class="list-group">
+    <li class="list-group-item active"><b>TÌM KIẾM</b></li>
+    <li>
+        <div class="input-group">
+            @using (Html.BeginForm("TimKiemNS", "Home", FormMethod.Post))
+            {
+                <div id="searchbox">
+                    <input id="txtTimKiem" name="txtTimKiem" type="text" size="20" placeholder="Nhập tên sản phẩm...." />
+                    <input id="button-submit" type="submit" value="Search" />
+                </div>
+            }
+        </div>
+    </li>
+</ul>
