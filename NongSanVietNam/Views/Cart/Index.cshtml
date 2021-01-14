@@ -1,0 +1,82 @@
+﻿
+@model List<NongSanVietNam.Models.CartItem>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+@if (Model.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+
+                <td>Mã SP</td>
+                <td>Tên SP</td>
+                <td>Hình ảnh</td>
+                <td>Số lượng</td>
+                <td>Đơn giá:đ/kg</td>
+                <td>Thành tiền</td>
+                <td></td>
+                <td></td>
+
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <form action="/Cart/UpdateItem" method="post">
+                    <tr>
+                        <td><input type="text" name="ID" class="quantity" style="border:none" value="@item.Product.ID" /></td>
+                        <td>@item.Product.TenNS</td>
+                        <td><img src="@item.Product.HinhAnhDaiDien" style="height:100px;width:100px" /></td>
+
+                        <td><input type="text" name="Quantity" class="quantity" value="@item.Quantity" /></td>
+
+                        <td>@item.Product.Gia</td>
+                        <td>@(item.Product.Gia* @item.Quantity)</td>
+                        <td>
+                            <input type="submit" name="Quantity" class="quantity" value="Cập nhật" style="        background-color: #3f89d8;
+        border: none;
+        border-radius: 2px;
+        padding: 3px 10px;
+        color: white
+" />
+
+                        </td>
+
+                        <td>
+                            <a href="/Cart/RemoveItem?productID=@item.Product.ID" id="delete"
+                               style=" background-color: red;padding: 3px 10px;color: white;position: absolute; border-radius: 2px">Xóa </a>
+                        </td>
+                    </tr>
+                </form>
+            }
+
+        </tbody>
+    </table>
+    <h4 style="text-align:right">Tổng tiền: @ViewBag.q</h4>
+    <a style=" margin-left: 5px;font-size:18px;border-radius:3px;background-color:#3f89d8;color:white;padding:5px 10px" id="continue" class=" btn" href="/Home/Index">Trở lại mua sắm</a>
+
+    <a style=" margin-left: 600px;
+        font-size: 18px;
+        border-radius: 3px;
+        background-color: #3f89d8;
+        color: white;
+        padding: 5px 10px
+" id="thanhtoan" class=" btn">Thanh toán </a>
+}
+else
+{
+    <span>Chưa có sản phẩm nào trong giỏ hàng<br/></span>
+    <a style=" margin-left: 5px;font-size:18px;border-radius:3px;background-color:#3f89d8;color:white;padding:5px 10px" id="continue" class=" btn" href="/Home/Index">Trở lại mua sắm</a>
+
+    <a style=" margin-left: 600px;
+        font-size: 18px;
+        border-radius: 3px;
+        background-color: #3f89d8;
+        color: white;
+        padding: 5px 10px
+" id="thanhtoan" class=" btn">Thanh toán </a>
+}
+

@@ -13,6 +13,25 @@ namespace NongSanVietNam.Controllers
         NongSanVN db = new NongSanVN();
         public ActionResult Index()
         {
+            var cart = Session["CartSession"];
+            var list = new List<CartItem>();
+
+            var count = 0;
+            if (cart != null)
+            {
+                list = (List<CartItem>)cart;
+                foreach (var item in list)
+                {
+                    count++;
+                   
+                }
+            }
+            else
+            {
+                count = 0;
+            }
+          
+            ViewBag.co = count;
             return View();
         }
         public PartialViewResult LeftMenu()
