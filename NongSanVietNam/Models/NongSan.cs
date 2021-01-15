@@ -18,6 +18,7 @@
 
         [Display(Name = "Loại cây cảnh")]
         public int IDLoaiNS { get; set; }
+        public int Gia { get; set; }
 
         [StringLength(550)]
         [Display(Name = "Mô tả ngắn")]
