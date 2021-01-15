@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h3 style="text-align:center; color:#0056f1;"><b>CẬP NHẬT NÔNG SẢN</b></h3>
+        <h3 style="text-align:center; color:#0056f1;"><b>CẬP NHẬT CÂY CẢNH</b></h3>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ID)
@@ -26,7 +26,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.IDLoaiNS, "Loại nông sản", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.IDLoaiNS, "Loại cây cảnh", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-8">
                 @Html.DropDownList("IDLoaiNS", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.IDLoaiNS, "", new { @class = "text-danger" })

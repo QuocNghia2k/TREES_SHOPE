@@ -12,11 +12,11 @@
         public int ID { get; set; }
         
         [Required]
-        [Display(Name = "Tên nông sản")]
+        [Display(Name = "Tên cây cảnh")]
         [StringLength(50)]
         public string TenNS { get; set; }
 
-        [Display(Name = "Loại nông sản")]
+        [Display(Name = "Loại cây cảnh")]
         public int IDLoaiNS { get; set; }
 
         [StringLength(550)]
