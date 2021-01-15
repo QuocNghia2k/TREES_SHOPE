@@ -11,6 +11,7 @@ namespace NongSanVietNam.Areas.Admin.Controllers
     {
         // GET: Admin/Default
         NongSanVN db = new NongSanVN();
+        
         public ActionResult Index()
         {
             if (string.IsNullOrEmpty(Session["ten"].ToString()))
